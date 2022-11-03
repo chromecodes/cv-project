@@ -1,52 +1,49 @@
 import React, { Component } from 'react'
-import Setbtn from './Setbtn'
+import Setlist from './Setlist'
+// import Setbtn from './Setbtn'
 import Exp from './Exp'
 import Educ from './Educ'
 
 export default class Set extends Component {
-    constructor(props){
-        super(props)
+  constructor(){
+    super()
 
-        this.state = {
-            sets: [1]
-        }
+    this.state = {
+      sets : [1],
+      crtset : '1',
     }
-
-    addSet=()=>{
-        if (this.state.sets.length < 4){
-          this.setState({
-            sets : this.state.sets.concat(this.state.sets.length + 1),
-            }) 
-            console.log(this.props.val);
-        } else {
-          console.log(this.state.sets);
-        }
+  }
+    updateSets=(x, y)=>{
+      this.setState({
+        sets : x,
+        crtset: Number(y)
+      })
     }
     
     addForm=(val)=>{
       if(val === 'exp') {
         let Addf = this.state.sets.map((set)=>{
-            return <Exp key={set} set={set}/>
+            return  <div
+            className={this.state.crtset === set ? "active set" : "set"}
+            key={set} set={set}> <Exp /> </div>
           })
         return Addf
       } else if (val === 'edu'){
         let Addf = this.state.sets.map((set)=>{
-          return <Educ key={set} set={set}/>
+          return  <div
+          className={this.state.crtset === set ? "active set" : "set"}
+          key={set} set={set}> <Educ /> </div>
         })
       return Addf
       }
     }
-    
+
 
   render() {
     return (
     <> 
-      <div className='setlist'>
-          {this.state.sets.map((set) => {
-            return <Setbtn key={set} set={set}  />  })}
-        <button className='addBtn' onClick={this.addSet}> + </button>
-      </div>
-        {(this.addForm(this.props.val))}
+        <Setlist val={this.props.val} update={this.updateSets}/>
+        {this.addForm(this.props.val)}
     </>
     )
   }
