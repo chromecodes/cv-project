@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class Bio extends Component {
   render() {
     return (
-      <div>
+      <div className='bio'>
         <div className='name'>
           <input type='text' placeholder='First Name' />
           <input type='text' placeholder='Last Name' />
