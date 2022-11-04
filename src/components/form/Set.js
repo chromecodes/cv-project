@@ -10,7 +10,7 @@ export default class Set extends Component {
 
     this.state = {
       sets : [1],
-      crtset : '1',
+      crtset : 1,
     }
   }
     updateSets=(x, y)=>{
