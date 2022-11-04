@@ -2,9 +2,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&family=Quicksand&family=Saira:ital,wght@1,300;1,400&display=swap);
 
 :root {
-  --primary-bg-color: #1a1a1a;
-  --secondary-bg-color: #333333;
-  --terinary-bg-color: #4d4d4d;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #e4f7ff;
+  --terinary-bg-color: #ffffff;
 
   --primary-red-accent: #e2838e;
   --secondary-red-accent: #c12e3e;
@@ -19,7 +19,9 @@
   --primary-saffron-accent: #ffccb3;
   --secondary-saffron-accent: #ff9966;
 
-  --primary-color: #ffffff;
+  --primary-color: #000000;
+  --secondary-color: #1789c9;
+  --terinary-color: #ffffff;
 
   --primary-liner-gradient-accent: linear-gradient(
     45deg,
@@ -58,7 +60,7 @@ button {
 .app {
   font-family: "Nunito", sans-serif;
   background-color: var(--primary-bg-color);
-  color: white;
+  color: inherit;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -84,19 +86,19 @@ button {
   font-weight: 600;
   height: 7vh;
   width: 55%;
-  color: var(--primary-color);
+  color: var(--terinary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--primary-liner-gradient-accent);
+  background: var(--secondary-blue-accent);
   position: fixed;
 }
 
 /***   MAIN SECTION   ***/
 
 .main {
-  padding-top: 7vh;
-  background-color: var(--primary-bg-color);
+  padding-top: 8vh;
+  background-color: var(--secondary-bg-color);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -105,7 +107,7 @@ button {
 /***   TAB SECTION   ***/
 .tablist {
   display: flex;
-  gap: 2px;
+  gap: 6px;
 }
 
 .tabs {
@@ -116,15 +118,22 @@ button {
   padding: 8px 20px;
   background-color: var(--secondary-bg-color);
   cursor: pointer;
+  border-top: 1px solid #1789c9;
+  border-left: 1px solid #1789c9;
+  border-right: 1px solid #1789c9;
+  border-radius: 15px 15px 0px 0px;
 }
 .blue {
-  background-color: #1789c9;
+  background-color: var(--primary-blue-accent);
 }
 .tab {
   color: var(--primary-color);
-  background: var(--terinary-bg-color);
+  background: var(--primary-blue-accent);
   display: none;
   padding: 25px;
+}
+input {
+  border: none;
 }
 .active {
   display: block;
@@ -138,9 +147,8 @@ button {
   display: flex;
   flex-direction: column;
   gap: 3px;
+  padding: 15px 25px;
 }
-
-/***   NAME SECTION   ***/
 
 .name,
 .contacts,
@@ -157,11 +165,37 @@ button {
   grid-area: title;
 }
 
+/***   SET SECTION   ***/
+.setlist {
+  display: flex;
+  gap: 4px;
+  padding: 5px 0 20px;
+}
+
+.set-btn {
+  color: inherit;
+  border: none;
+  background: var(--secondary-bg-color);
+  font-size: 18px;
+  font-weight: inherit;
+  border-radius: 50%;
+  padding: 4px 9px;
+}
+.set {
+  padding: 0 25px;
+  display: none;
+}
+/***   EXP SECTION   ***/
+.exp {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5px;
+}
+.exp > :last-child {
+  grid-column: 1/3;
+}
 /***   BIO SECTION   ***/
 
-.nav-back {
-  grid-area: nav;
-}
 .navCnt {
   flex: 1;
   height: 100%;
@@ -552,18 +586,18 @@ button {
 /***   FOOTER SECTION   ***/
 
 .footer {
-  border-top: 1px solid var(--terinary-bg-color);
-  color: var(--secondary-drgreen-accent);
+  border-top: 1px solid var(--secondary-blue-accent);
+  color: var(--secondary-color);
   padding: 10px 0px 4px 0px;
   font-size: 16px;
   text-align: center;
 }
 .odin {
-  color: var(--primary-drgreen-accent);
+  color: inherit;
 }
 .faCode {
   font-size: 16px;
-  color: var(--secondary-red-accent);
+  color: var(--secondary-blue-accent);
   transition: transform 0.5s ease-in-out;
 }
 
@@ -591,9 +625,13 @@ button {
 .visible {
   display: block;
 }
-.active {
-  display: inline-block;
-}
+
 .required::placeholder {
   color: var(--secondary-red-accent);
+}
+
+/********* *******************/
+
+.active {
+  display: block;
 }
