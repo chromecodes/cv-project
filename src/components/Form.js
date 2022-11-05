@@ -12,9 +12,28 @@ export default class Form extends Component {
     };
   }
 
-  call(index) {
+  call = (index) => {
     this.setState({ count: index });
-  }
+  };
+
+  nextTab = () => {
+    switch (this.state.count) {
+      case 1:
+        this.call(2);
+        break;
+
+      case 2:
+        this.call(3);
+        break;
+
+      case 3:
+        this.call(4);
+        break;
+
+      default:
+        break;
+    }
+  };
 
   render() {
     return (
@@ -46,13 +65,13 @@ export default class Form extends Component {
           </div>
         </div>
         <div className={this.state.count === 1 ? "active tab" : "tab"}>
-          <Bio />
+          <Bio next={this.nextTab} />
         </div>
         <div className={this.state.count === 2 ? "active tab" : "tab"}>
-          <Set val='exp' />
+          <Set val='exp' next={this.nextTab} />
         </div>
         <div className={this.state.count === 3 ? "active tab" : "tab"}>
-          <Set val='edu' />
+          <Set val='edu' next={this.nextTab} />
         </div>
         <div className={this.state.count === 4 ? "active tab" : "tab"}>
           <Skil />

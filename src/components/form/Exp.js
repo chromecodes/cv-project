@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MdNavigateNext, MdHighlightOff } from "react-icons/md";
 
 export default class Exp extends Component {
   render() {
@@ -18,7 +19,10 @@ export default class Exp extends Component {
           ></textarea>
         </div>
 
-        <button className='nxt btn'> Next </button>
+        <div className='nxtPs'>
+          <MdNavigateNext className='nxt-btn' onClick={this.props.next} />
+          <MdHighlightOff className='dlt-btn' onClick={this.props.next} />
+        </div>
       </>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MdNavigateNext } from "react-icons/md";
 
 export class Bio extends Component {
   render() {
@@ -17,15 +18,13 @@ export class Bio extends Component {
           <input type='text' placeholder='LinkedIn' />
           <input type='text' placeholder='GitHub' />
         </div>
-        <div className='desp'>
-          <textarea
-            className='about'
-            placeholder='About yourself'
-            maxLength='150'
-          ></textarea>
-        </div>
-        <div>
-          <button className='nxt btn'> Next </button>
+        <textarea
+          className='about'
+          placeholder='About yourself'
+          maxLength='150'
+        ></textarea>
+        <div className='nxtPs'>
+          <MdNavigateNext className='nxt-btn' onClick={this.props.next} />
         </div>
       </div>
     );

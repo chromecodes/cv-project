@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { AiOutlinePlusCircle } from "react-icons/ai";
+
 // import Setbtn from "./Setbtn";
 
 export default class Setlist extends Component {
@@ -17,6 +19,7 @@ export default class Setlist extends Component {
         sets: this.state.sets.concat(this.state.sets.length + 1),
         crtset: this.state.crtset,
       });
+      this.props.update(this.state.sets, this.state.crtset);
     } else {
       console.log(this.state.sets);
     }
@@ -29,7 +32,11 @@ export default class Setlist extends Component {
     });
     this.props.update(this.state.sets, index);
   };
+
   render() {
+    if (this.props.crtSet !== this.state.crtset) {
+      this.getCrt(this.props.crtSet);
+    }
     return (
       <div className='setlist'>
         {this.state.sets.map((set) => {
@@ -46,9 +53,7 @@ export default class Setlist extends Component {
             </button>
           );
         })}
-        <button className='addBtn' onClick={this.addSet}>
-          +
-        </button>
+        <AiOutlinePlusCircle onClick={this.addSet} className='addBtn' />
       </div>
     );
   }
