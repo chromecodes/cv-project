@@ -13,12 +13,61 @@ export default class Set extends Component {
       crtset: 1,
     };
   }
+
   updateSets = (x, y) => {
     this.setState({
       sets: x,
       crtset: Number(y),
     });
   };
+
+  nextSet = () => {
+    if (this.state.crtset === this.state.sets.length) {
+      console.log(4);
+      this.props.next();
+    } else {
+      switch (this.state.crtset) {
+        case 1:
+          this.updateSets(this.state.sets, 2);
+          break;
+
+        case 2:
+          this.updateSets(this.state.sets, 3);
+          break;
+
+        case 3:
+          this.updateSets(this.state.sets, 4);
+          break;
+
+        default:
+          break;
+      }
+    }
+  };
+
+  // deleteSet = (index) => {
+  //   if (this.state.crtset === this.state.sets.length) {
+  //     console.log(4);
+  //     this.props.next();
+  //   } else {
+  //     switch (index) {
+  //       case 4:
+  //         this.updateSets(this.state.sets, 3);
+  //         break;
+
+  //       case 3:
+  //         this.updateSets(this.state.sets, 2);
+  //         break;
+
+  //       case 2:
+  //         this.updateSets(this.state.sets, 1);
+  //         break;
+
+  //       default:
+  //         break;
+  //     }
+  //   }
+  // };
 
   addForm = (val) => {
     if (val === "exp") {
@@ -47,29 +96,6 @@ export default class Set extends Component {
         );
       });
       return Addf;
-    }
-  };
-  nextSet = () => {
-    if (this.state.crtset === this.state.sets.length) {
-      console.log(4);
-      this.props.next();
-    } else {
-      switch (this.state.crtset) {
-        case 1:
-          this.updateSets(this.state.sets, 2);
-          break;
-
-        case 2:
-          this.updateSets(this.state.sets, 3);
-          break;
-
-        case 3:
-          this.updateSets(this.state.sets, 4);
-          break;
-
-        default:
-          break;
-      }
     }
   };
 

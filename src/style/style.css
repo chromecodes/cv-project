@@ -200,10 +200,7 @@ textarea:focus {
 .dlt-btn {
   font-size: 32px;
   color: var(--secondary-red-accent);
-  background-color: var(--primary-red-accent);
-  border-radius: 50%;
   cursor: pointer;
-  border: 1px solid var(--secondary-blue-accent);
 }
 .nxtPs {
   justify-self: stretch;

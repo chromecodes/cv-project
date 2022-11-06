@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { RiDeleteBack2Fill } from "react-icons/ri";
 
 // import Setbtn from "./Setbtn";
 
@@ -12,6 +13,8 @@ export default class Setlist extends Component {
       crtset: 1,
     };
   }
+
+  updateSet = () => {};
 
   addSet = () => {
     if (this.state.sets.length < 4) {
@@ -31,6 +34,15 @@ export default class Setlist extends Component {
       crtset: Number(index),
     });
     this.props.update(this.state.sets, index);
+  };
+  removeSet = () => {
+    if (this.state.sets.length !== 1) {
+      console.log(this.state.sets.splice(0, this.state.sets.length - 1));
+      this.setState({
+        sets: [this.state.sets.splice(0, this.state.sets.length - 1)],
+        crtset: this.state.sets.length - 1,
+      });
+    }
   };
 
   render() {
@@ -54,6 +66,7 @@ export default class Setlist extends Component {
           );
         })}
         <AiOutlinePlusCircle onClick={this.addSet} className='addBtn' />
+        <RiDeleteBack2Fill className='dlt-btn' onClick={this.removeSet} />
       </div>
     );
   }

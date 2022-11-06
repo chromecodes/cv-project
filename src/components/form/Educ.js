@@ -13,7 +13,7 @@ export class Educ extends Component {
         </div>
         <div className='nxtPs'>
           <MdNavigateNext className='nxt-btn' onClick={this.props.next} />
-          <MdHighlightOff className='dlt-btn' onClick={this.props.next} />
+          {/* <MdHighlightOff  onClick={this.props.next} /> */}
         </div>
       </>
     );
