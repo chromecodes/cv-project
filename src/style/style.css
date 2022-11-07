@@ -202,6 +202,9 @@ textarea:focus {
   color: var(--secondary-red-accent);
   cursor: pointer;
 }
+.grayed {
+  color: gray;
+}
 .nxtPs {
   justify-self: stretch;
   padding-right: 15px;
@@ -209,7 +212,9 @@ textarea:focus {
   flex-direction: row-reverse;
   gap: 15px;
 }
-
+.flex {
+  display: flex;
+}
 /***   SET SECTION   ***/
 .setlist {
   display: flex;

@@ -37,10 +37,19 @@ export default class Setlist extends Component {
   };
   removeSet = () => {
     if (this.state.sets.length !== 1) {
-      console.log(this.state.sets.splice(0, this.state.sets.length - 1));
+      let tempSet = [1, 2, 3, 4],
+        tempSets = [];
+      if (this.state.sets.length === 4) {
+        tempSets = tempSet.splice(0, 3);
+      } else if (this.state.sets.length === 3) {
+        tempSets = tempSet.splice(0, 2);
+      } else if (this.state.sets.length === 2) {
+        tempSets = tempSet.splice(0, 1);
+      }
+      console.log(tempSets);
       this.setState({
-        sets: [this.state.sets.splice(0, this.state.sets.length - 1)],
-        crtset: this.state.sets.length - 1,
+        sets: tempSets,
+        crtset: tempSets.length,
       });
     }
   };
@@ -66,7 +75,12 @@ export default class Setlist extends Component {
           );
         })}
         <AiOutlinePlusCircle onClick={this.addSet} className='addBtn' />
-        <RiDeleteBack2Fill className='dlt-btn' onClick={this.removeSet} />
+        <RiDeleteBack2Fill
+          className={
+            this.state.sets.length === 1 ? "grayed dlt-btn" : "dlt-btn"
+          }
+          onClick={this.removeSet}
+        />
       </div>
     );
   }

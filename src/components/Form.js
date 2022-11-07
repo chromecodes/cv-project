@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Bio from "./form/Bio";
 import Set from "./form/Set";
-import Skil from "./form/Skil";
 
 export default class Form extends Component {
   constructor() {
@@ -74,7 +73,10 @@ export default class Form extends Component {
           <Set val='edu' next={this.nextTab} />
         </div>
         <div className={this.state.count === 4 ? "active tab" : "tab"}>
-          <Skil />
+          <div className=''>
+            Skill Catagories
+            <Set val='skl' next={this.nextTab} />
+          </div>
         </div>
       </div>
     );

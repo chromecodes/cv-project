@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Setlist from "./Setlist";
-// import Setbtn from './Setbtn'
+import Skil from "./Skil";
 import Exp from "./Exp";
 import Educ from "./Educ";
 
@@ -92,6 +92,19 @@ export default class Set extends Component {
             set={set}
           >
             <Educ next={this.nextSet} />
+          </div>
+        );
+      });
+      return Addf;
+    } else if (val === "skl") {
+      let Addf = this.state.sets.map((set) => {
+        return (
+          <div
+            className={this.state.crtset === set ? "active set" : "set"}
+            key={set}
+            set={set}
+          >
+            <Skil next={this.nextSet} />
           </div>
         );
       });
