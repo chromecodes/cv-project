@@ -64,7 +64,7 @@ export default class Form extends Component {
           </div>
         </div>
         <div className={this.state.count === 1 ? "active tab" : "tab"}>
-          <Bio next={this.nextTab} />
+          <Bio next={this.nextTab} getData={this.props.getData} />
         </div>
         <div className={this.state.count === 2 ? "active tab" : "tab"}>
           <Set val='exp' next={this.nextTab} />

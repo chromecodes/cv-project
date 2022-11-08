@@ -45,29 +45,11 @@ export default class Set extends Component {
     }
   };
 
-  // deleteSet = (index) => {
-  //   if (this.state.crtset === this.state.sets.length) {
-  //     console.log(4);
-  //     this.props.next();
-  //   } else {
-  //     switch (index) {
-  //       case 4:
-  //         this.updateSets(this.state.sets, 3);
-  //         break;
+  data = {
+    exp: {},
+  };
 
-  //       case 3:
-  //         this.updateSets(this.state.sets, 2);
-  //         break;
-
-  //       case 2:
-  //         this.updateSets(this.state.sets, 1);
-  //         break;
-
-  //       default:
-  //         break;
-  //     }
-  //   }
-  // };
+  sortData = (data) => {};
 
   addForm = (val) => {
     if (val === "exp") {
@@ -78,7 +60,7 @@ export default class Set extends Component {
             key={set}
             set={set}
           >
-            <Exp next={this.nextSet} />
+            <Exp next={this.nextSet} set={set} />
           </div>
         );
       });
@@ -91,7 +73,7 @@ export default class Set extends Component {
             key={set}
             set={set}
           >
-            <Educ next={this.nextSet} />
+            <Educ next={this.nextSet} set={set} />
           </div>
         );
       });
