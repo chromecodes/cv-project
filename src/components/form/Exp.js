@@ -4,28 +4,21 @@ import { MdNavigateNext } from "react-icons/md";
 export default class Exp extends Component {
   data = {
     set: this.props.set,
-    data: {
-      role: "",
-      company: "",
-      start: "",
-      end: "",
-      about: "",
-    },
   };
   getInputs = () => {
     this.props.getData(this.data);
   };
   getRole = (value) => {
-    this.data.email = value;
+    this.data.role = value;
   };
   getCompany = (value) => {
-    this.data.phone = value;
+    this.data.company = value;
   };
   getStart = (value) => {
-    this.data.linkedin = value;
+    this.data.start = value;
   };
   getEnd = (value) => {
-    this.data.github = value;
+    this.data.end = value;
   };
   getAbout = (value) => {
     this.data.about = value;

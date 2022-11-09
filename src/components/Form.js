@@ -64,18 +64,26 @@ export default class Form extends Component {
           </div>
         </div>
         <div className={this.state.count === 1 ? "active tab" : "tab"}>
-          <Bio next={this.nextTab} getData={this.props.getData} />
+          <Bio next={this.nextTab} getData={this.props.getBioData} />
         </div>
         <div className={this.state.count === 2 ? "active tab" : "tab"}>
-          <Set val='exp' next={this.nextTab} />
+          <Set
+            val='exp'
+            next={this.nextTab}
+            getExpData={this.props.getExpData}
+          />
         </div>
         <div className={this.state.count === 3 ? "active tab" : "tab"}>
-          <Set val='edu' next={this.nextTab} />
+          <Set val='edu' next={this.nextTab} getData={this.props.getEduData} />
         </div>
         <div className={this.state.count === 4 ? "active tab" : "tab"}>
           <div className=''>
             Skill Catagories
-            <Set val='skl' next={this.nextTab} />
+            <Set
+              val='skl'
+              next={this.nextTab}
+              getData={this.props.getSkilData}
+            />
           </div>
         </div>
       </div>

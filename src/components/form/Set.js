@@ -45,11 +45,22 @@ export default class Set extends Component {
     }
   };
 
-  data = {
-    exp: {},
-  };
+  data = { exp: [], edu: [], skill: [] };
 
-  sortData = (data) => {};
+  sortData = (datum) => {
+    console.log(datum);
+    for (let i = 1; i < 5; i++) {
+      if (datum.set === i) {
+        if (datum.role || datum.skill) {
+          console.log(1);
+          this.data.exp[i - 1] = datum;
+        }
+      }
+    }
+    if (datum.role) {
+      this.props.getExpData(this.data.exp);
+    }
+  };
 
   addForm = (val) => {
     if (val === "exp") {
@@ -60,7 +71,7 @@ export default class Set extends Component {
             key={set}
             set={set}
           >
-            <Exp next={this.nextSet} set={set} />
+            <Exp next={this.nextSet} getData={this.sortData} set={set} />
           </div>
         );
       });

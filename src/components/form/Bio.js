@@ -2,16 +2,7 @@ import React, { Component } from "react";
 import { MdNavigateNext } from "react-icons/md";
 
 export class Bio extends Component {
-  data = {
-    first: "",
-    last: "",
-    title: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    about: "",
-  };
+  data = {};
 
   getInputs = () => {
     this.props.getData(this.data);

@@ -9,7 +9,12 @@ export default class Container extends Component {
     return (
       <div className='container'>
         <Header />
-        <Form getData={this.props.getData} />
+        <Form
+          getBioData={this.props.getBioData}
+          getExpData={this.props.getExpData}
+          getEduData={this.props.getEduData}
+          getSkilData={this.props.getSkilData}
+        />
         <Footer />
       </div>
     );
