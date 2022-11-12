@@ -17,7 +17,6 @@ class App extends Component {
   }
 
   getBioData = (data) => {
-    console.log(data);
     this.setState({
       masterData: {
         bio: data,
@@ -28,7 +27,6 @@ class App extends Component {
     });
   };
   getExpData = (data) => {
-    console.log(data);
     this.setState({
       masterData: {
         bio: this.state.masterData.bio,
@@ -39,7 +37,6 @@ class App extends Component {
     });
   };
   getEduData = (data) => {
-    console.log(data);
     this.setState({
       masterData: {
         bio: this.state.masterData.bio,
@@ -50,7 +47,6 @@ class App extends Component {
     });
   };
   getSkilData = (data) => {
-    console.log(data);
     this.setState({
       masterData: {
         bio: this.state.masterData.bio,

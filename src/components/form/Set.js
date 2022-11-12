@@ -5,8 +5,8 @@ import Exp from "./Exp";
 import Educ from "./Educ";
 
 export default class Set extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       sets: [1],
@@ -23,7 +23,6 @@ export default class Set extends Component {
 
   nextSet = () => {
     if (this.state.crtset === this.state.sets.length) {
-      console.log(4);
       this.props.next();
     } else {
       switch (this.state.crtset) {
@@ -48,19 +47,25 @@ export default class Set extends Component {
   data = { exp: [], edu: [], skill: [] };
 
   sortData = (datum) => {
-    console.log(datum);
     for (let i = 1; i < 5; i++) {
       if (datum.set === i) {
-        if (datum.role || datum.skill) {
+        if (datum.role) {
           this.data.exp[i - 1] = datum;
         }
-        if (datum.role || datum.skill) {
-          this.data.exp[i - 1] = datum;
+        if (datum.degree) {
+          this.data.edu[i - 1] = datum;
+        }
+        if (datum.skills) {
+          this.data.skill[i - 1] = datum;
         }
       }
     }
     if (datum.role) {
       this.props.getExpData(this.data.exp);
+    } else if (datum.degree) {
+      this.props.getEduData(this.data.edu);
+    } else if (datum.skills) {
+      this.props.getSkilData(this.data.skill);
     }
   };
 
@@ -86,7 +91,7 @@ export default class Set extends Component {
             key={set}
             set={set}
           >
-            <Educ next={this.nextSet} set={set} />
+            <Educ next={this.nextSet} getData={this.sortData} set={set} />
           </div>
         );
       });
@@ -99,7 +104,7 @@ export default class Set extends Component {
             key={set}
             set={set}
           >
-            <Skil next={this.nextSet} />
+            <Skil next={this.nextSet} getData={this.sortData} set={set} />
           </div>
         );
       });

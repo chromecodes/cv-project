@@ -74,7 +74,11 @@ export default class Form extends Component {
           />
         </div>
         <div className={this.state.count === 3 ? "active tab" : "tab"}>
-          <Set val='edu' next={this.nextTab} getData={this.props.getEduData} />
+          <Set
+            val='edu'
+            next={this.nextTab}
+            getEduData={this.props.getEduData}
+          />
         </div>
         <div className={this.state.count === 4 ? "active tab" : "tab"}>
           <div className=''>
@@ -82,7 +86,7 @@ export default class Form extends Component {
             <Set
               val='skl'
               next={this.nextTab}
-              getData={this.props.getSkilData}
+              getSkilData={this.props.getSkilData}
             />
           </div>
         </div>
