@@ -52,7 +52,9 @@ export default class Set extends Component {
     for (let i = 1; i < 5; i++) {
       if (datum.set === i) {
         if (datum.role || datum.skill) {
-          console.log(1);
+          this.data.exp[i - 1] = datum;
+        }
+        if (datum.role || datum.skill) {
           this.data.exp[i - 1] = datum;
         }
       }
