@@ -9,8 +9,19 @@ export default class Preview extends Component {
     }
   }
   skilSec= ()=>{
+    let sec = ''
     if(this.props.data.skill[0]){
-      console.log(this.props.data.skill[0].skills);
+      for(let i = 0; i < this.props.data.skill.length ; i++){
+        // for(let j = 0; j < this.props.data.skill[i].skills; j++){
+          let temp = this.props.data.skill[i].skills.join(', ')
+          if( i !== 0){
+            temp = ' | ' + temp 
+          }
+          sec = sec + temp 
+        // }
+      }
+      let con = <div><div className="Heading">Skills</div><div className="line"></div><div className="skills">{sec}</div></div>
+      return con
     }
   }
 
@@ -40,23 +51,17 @@ export default class Preview extends Component {
               
               {this.aboutSec()}
               <br/>
-              <div> 
-                <div className="Heading">Skills</div>
+              {this.skilSec()}
+              <br/>
+              <div>
+              <div className="experience">
+                <div className="Heading">Experience</div>
                 <div className="line"></div>
-                <div className="skills">
-                    {this.skilSec()}
-
-                  {/* {this.props.data.skill[0].skills[1]} */}
-                  {/* {console.log(this.props.data.skill[0].skills[0])} */}
-                </div>
               </div>
-              
-              
-              <span className="breaker"></span>
-              
-              <span className="breaker"></span>
 
-              <div className="experience"></div>
+              </div>
+
+                <div className="experience"></div>
               <span className="breaker"></span>
 
               <div className="education"></div>
