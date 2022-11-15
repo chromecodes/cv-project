@@ -27,7 +27,7 @@
   height: 2px;
   border-radius: 5px;
   background-color: #1373ab;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 .Heading {
   font-size: 24px;
@@ -118,4 +118,10 @@
   -webkit-font-smoothing: antialiased;
   font: var(--fa-font-brands);
   content: "\f09b  -";
+}
+
+/**** EXP  ****/
+.sub-sec {
+  display: flex;
+  justify-content: space-between;
 }

@@ -25,9 +25,29 @@ export default class Preview extends Component {
     }
   }
 
-  // expSec=()=>{
-  //   let exp = 
-  // }
+  expSec=()=>{
+    let exp
+    if(this.props.data.exp[0]){
+    for(let i = 0; i< this.props.data.exp.length; i++){
+      let temp = <div>
+                    <div className="sub-sec">
+                      <span>{this.props.data.exp[i].role} - {this.props.data.exp[i].company} </span>
+                      <span>{this.props.data.exp[i].start} - {this.props.data.exp[i].end} </span>
+                    </div>
+                    <div>{this.props.data.exp[i].about}</div>
+                  </div>
+    //   if (i !== 0){
+    //     exp = exp + temp;
+    //   } else {
+      console.log(temp);
+
+    //   }
+    //   exp =  temp;
+    }
+
+    // return exp
+    }
+  }
 
   render() {
     return (
@@ -57,6 +77,14 @@ export default class Preview extends Component {
               <div className="experience">
                 <div className="Heading">Experience</div>
                 <div className="line"></div>
+                <div>
+                  {/* <div className="sub-sec">
+                    <span>{this.props.data.exp[0].role} - {this.props.data.exp[0].company} </span>
+                    <span>{this.props.data.exp[0].start} - {this.props.data.exp[0].end} </span>
+                  </div>
+                  <div>{this.props.data.exp[0].about}</div> */}
+                  {this.expSec()}
+                </div>
               </div>
 
               </div>
