@@ -16,6 +16,44 @@ class App extends Component {
     };
   }
 
+  removeLastExp = () => {
+    let temp = this.state.masterData.exp;
+    temp.pop();
+    this.setState({
+      masterData: {
+        bio: this.state.masterData.bio,
+        exp: temp,
+        edu: this.state.masterData.edu,
+        skill: this.state.masterData.skill,
+      },
+    });
+  };
+
+  removeLastEdu = () => {
+    let temp = this.state.masterData.edu;
+    temp.pop();
+    this.setState({
+      masterData: {
+        bio: this.state.masterData.bio,
+        exp: this.state.masterData.exp,
+        edu: temp,
+        skill: this.state.masterData.skill,
+      },
+    });
+  };
+
+  removeLastSkill = () => {
+    let temp = this.state.masterData.skill;
+    temp.pop();
+    this.setState({
+      masterData: {
+        bio: this.state.masterData.bio,
+        exp: this.state.masterData.exp,
+        edu: this.state.masterData.edu,
+        skill: temp,
+      },
+    });
+  };
   getBioData = (data) => {
     this.setState({
       masterData: {
@@ -65,6 +103,9 @@ class App extends Component {
           getExpData={this.getExpData}
           getEduData={this.getEduData}
           getSkilData={this.getSkilData}
+          removeExp={this.removeLastExp}
+          removeEdu={this.removeLastEdu}
+          removeSkill={this.removeLastSkill}
         />
         <Preview data={this.state.masterData} />
       </div>

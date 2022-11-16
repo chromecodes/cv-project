@@ -119,6 +119,9 @@ export default class Set extends Component {
           val={this.props.val}
           update={this.updateSets}
           crtSet={this.state.crtset}
+          removeExp={this.props.removeExp}
+          removeEdu={this.props.removeEdu}
+          removeSkill={this.props.removeSkill}
         />
         {this.addForm(this.props.val)}
       </>

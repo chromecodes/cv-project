@@ -53,6 +53,15 @@ export default class Setlist extends Component {
       });
     }
   };
+  removeData = () => {
+    if (this.props.val === "exp") {
+      this.props.removeExp();
+    } else if (this.props.val === "edu") {
+      this.props.removeEdu();
+    } else if (this.props.val === "skl") {
+      this.props.removeSkill();
+    }
+  };
 
   render() {
     if (this.props.crtSet !== this.state.crtset) {
@@ -79,7 +88,10 @@ export default class Setlist extends Component {
           className={
             this.state.sets.length === 1 ? "grayed dlt-btn" : "dlt-btn"
           }
-          onClick={this.removeSet}
+          onClick={() => {
+            this.removeSet();
+            this.removeData();
+          }}
         />
       </div>
     );

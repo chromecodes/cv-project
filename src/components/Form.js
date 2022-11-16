@@ -71,6 +71,7 @@ export default class Form extends Component {
             val='exp'
             next={this.nextTab}
             getExpData={this.props.getExpData}
+            removeExp={this.props.removeExp}
           />
         </div>
         <div className={this.state.count === 3 ? "active tab" : "tab"}>
@@ -78,6 +79,7 @@ export default class Form extends Component {
             val='edu'
             next={this.nextTab}
             getEduData={this.props.getEduData}
+            removeEdu={this.props.removeEdu}
           />
         </div>
         <div className={this.state.count === 4 ? "active tab" : "tab"}>
@@ -87,6 +89,7 @@ export default class Form extends Component {
               val='skl'
               next={this.nextTab}
               getSkilData={this.props.getSkilData}
+              removeSkill={this.props.removeSkill}
             />
           </div>
         </div>

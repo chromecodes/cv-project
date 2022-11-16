@@ -3,7 +3,7 @@ import "../style/page.css";
 
 export default class Preview extends Component {
   aboutSec= ()=>{
-    let sec = <div><div className="Heading">About</div><div className="line"></div><div className="About" >{this.props.data.bio.about} </div></div>
+    let sec = <div><div className="Heading">About</div><div className="line"></div><div className="sub-about" >{this.props.data.bio.about} </div></div>
     if (this.props.data.bio.about){
       return sec
     }
@@ -12,42 +12,53 @@ export default class Preview extends Component {
     let sec = ''
     if(this.props.data.skill[0]){
       for(let i = 0; i < this.props.data.skill.length ; i++){
-        // for(let j = 0; j < this.props.data.skill[i].skills; j++){
           let temp = this.props.data.skill[i].skills.join(', ')
           if( i !== 0){
             temp = ' | ' + temp 
           }
           sec = sec + temp 
-        // }
       }
-      let con = <div><div className="Heading">Skills</div><div className="line"></div><div className="skills">{sec}</div></div>
+      let con = <div><div className="Heading">Skills</div><div className="line"></div><div className="sub-about">{sec}</div></div>
       return con
     }
   }
 
   expSec=()=>{
-    let exp
+    let exp = []
     if(this.props.data.exp[0]){
-    for(let i = 0; i< this.props.data.exp.length; i++){
-      let temp = <div>
-                    <div className="sub-sec">
-                      <span>{this.props.data.exp[i].role} - {this.props.data.exp[i].company} </span>
-                      <span>{this.props.data.exp[i].start} - {this.props.data.exp[i].end} </span>
+      for(let i = 0; i< this.props.data.exp.length; i++){
+      
+        let temp = <div key={this.props.data.exp[i].set}>
+                      <div className="sub-sec">
+                        <span className="sub-name">{this.props.data.exp[i].role} - {this.props.data.exp[i].company} </span>
+                        <span className="date">{this.props.data.exp[i].start} - {this.props.data.exp[i].end} </span>
+                      </div>
+                      <div className="sub-about">{this.props.data.exp[i].about}</div>
                     </div>
-                    <div>{this.props.data.exp[i].about}</div>
-                  </div>
-    //   if (i !== 0){
-    //     exp = exp + temp;
-    //   } else {
-      console.log(temp);
-
-    //   }
-    //   exp =  temp;
-    }
-
-    // return exp
+        exp[i]=temp
+      }
+    let cont  = <div><div className="experience"><div className="Heading">Experience</div><div className="line"></div><div>{exp}</div></div></div>
+    return cont
     }
   }
+  eduSec=()=>{
+    let edu = []
+    if(this.props.data.edu[0]){
+    for(let i = 0; i< this.props.data.edu.length; i++){
+      let temp = <div key={this.props.data.edu[i].set} >
+                    <div className="sub-sec">
+                      <span className="sub-name">{this.props.data.edu[i].degree} - {this.props.data.edu[i].school} </span>
+                      <span className="date">{this.props.data.edu[i].start} - {this.props.data.edu[i].end} </span>
+                    </div>
+                  </div>
+      edu[i] = temp
+    }
+    let cont  = <div><div className="education"><div className="Heading">Education</div><div className="line"></div><div>{edu}</div></div></div>
+
+    return cont
+    }
+  }
+
 
   render() {
     return (
@@ -66,33 +77,12 @@ export default class Preview extends Component {
                 <div><span className="icon3"></span><span>{this.props.data.bio.linkedin}</span></div>
                 <div><span className="icon4"></span><span>{this.props.data.bio.github}</span></div>
                 </div>
-
               </div>
-              
               {this.aboutSec()}
-              <br/>
               {this.skilSec()}
-              <br/>
-              <div>
-              <div className="experience">
-                <div className="Heading">Experience</div>
-                <div className="line"></div>
-                <div>
-                  {/* <div className="sub-sec">
-                    <span>{this.props.data.exp[0].role} - {this.props.data.exp[0].company} </span>
-                    <span>{this.props.data.exp[0].start} - {this.props.data.exp[0].end} </span>
-                  </div>
-                  <div>{this.props.data.exp[0].about}</div> */}
-                  {this.expSec()}
-                </div>
-              </div>
+              {this.expSec()}
+              {this.eduSec()}
 
-              </div>
-
-                <div className="experience"></div>
-              <span className="breaker"></span>
-
-              <div className="education"></div>
             </div>
           </div>
           {console.log(this.props.data)}
@@ -101,3 +91,5 @@ export default class Preview extends Component {
     );
   }
 }
+
+
