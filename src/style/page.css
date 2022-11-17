@@ -35,17 +35,14 @@
   color: #1373ab;
 }
 .page {
+  background-color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  padding: 30px;
-  height: 91.5%;
-  background-color: aliceblue;
   font-size: 16px;
+  height: 93%;
+  border: 1px solid var(--secondary-blue-accent);
+  margin: 30px;
 }
 .work {
-  background-color: white;
-  border: 1px solid var(--secondary-blue-accent);
-  height: 100%;
-  padding: 10px;
 }
 .detail {
   display: flex;

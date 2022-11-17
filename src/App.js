@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Container from "./components/Container";
 import Preview from "./components/Preview";
+import Print from "./components/Print";
 
 class App extends Component {
   constructor() {
@@ -95,6 +96,14 @@ class App extends Component {
     });
   };
 
+  // callPreview = () => {
+  //   if (this.state.masterData.bio.first) {
+  //     return this.state.masterData;
+  //   } else {
+  //     return "hello";
+  //   }
+  // };
+
   render() {
     return (
       <div className='app'>
@@ -106,8 +115,12 @@ class App extends Component {
           removeExp={this.removeLastExp}
           removeEdu={this.removeLastEdu}
           removeSkill={this.removeLastSkill}
+          data={this.state.masterData}
         />
-        <Preview data={this.state.masterData} />
+        <Preview
+          data={this.state.masterData}
+          ref={(el) => (this.componentRef = el)}
+        />
       </div>
     );
   }
