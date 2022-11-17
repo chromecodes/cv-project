@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Container from "./components/Container";
 import Preview from "./components/Preview";
-import Print from "./components/Print";
+import ReactToPrint from "react-to-print";
 
 class App extends Component {
   constructor() {
     super();
 
+    this.printRef = React.createRef();
     this.state = {
       masterData: {
         bio: 1,
@@ -104,6 +105,10 @@ class App extends Component {
   //   }
   // };
 
+  getPrint = () => {
+    this.printRef.current.click();
+  };
+
   render() {
     return (
       <div className='app'>
@@ -115,7 +120,13 @@ class App extends Component {
           removeExp={this.removeLastExp}
           removeEdu={this.removeLastEdu}
           removeSkill={this.removeLastSkill}
-          data={this.state.masterData}
+          print={this.getPrint}
+        />
+        <ReactToPrint
+          trigger={() => {
+            return <div ref={this.printRef} style={{ display: "none" }}></div>;
+          }}
+          content={() => this.componentRef}
         />
         <Preview
           data={this.state.masterData}

@@ -45,17 +45,6 @@ button {
   cursor: pointer;
 }
 
-.controls button,
-.task-nav,
-.projects-nav,
-.project-title {
-  color: var(--primary-color);
-  background-color: var(--terinary-bg-color);
-  border-radius: 5px;
-  border: 1px solid var(--terinary-bg-color);
-  font-weight: 800;
-  transition: 0.08s ease-in;
-}
 /*** APP SECTION ***/
 .app {
   font-family: "Nunito", sans-serif;

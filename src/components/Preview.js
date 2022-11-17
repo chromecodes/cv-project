@@ -149,10 +149,10 @@ export default class Preview extends Component {
           <div className='page'>
             <div className='work'>
               {this.printData()}
-              {/* {this.aboutSec()}
+              {this.aboutSec()}
               {this.skilSec()}
               {this.expSec()}
-              {this.eduSec()} */}
+              {this.eduSec()}
             </div>
           </div>
         </div>
