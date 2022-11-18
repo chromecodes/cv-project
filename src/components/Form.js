@@ -83,8 +83,7 @@ export default class Form extends Component {
           />
         </div>
         <div className={this.state.count === 4 ? "active tab" : "tab"}>
-          <div className=''>
-            Skill Catagories
+          <div className='height'>
             <Set
               val='skl'
               next={this.nextTab}

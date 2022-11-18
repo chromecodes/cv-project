@@ -25,7 +25,7 @@ export default class Exp extends Component {
   };
   render() {
     return (
-      <>
+      <div className='spread'>
         <div className='exp'>
           <input
             type='text'
@@ -66,7 +66,7 @@ export default class Exp extends Component {
             }}
           />
         </div>
-      </>
+      </div>
     );
   }
 }

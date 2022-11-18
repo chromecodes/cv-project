@@ -35,21 +35,23 @@
   color: #1373ab;
 }
 .page {
-  background-color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
-  height: 93%;
-  border: 1px solid var(--secondary-blue-accent);
-  margin: 30px;
+  height: 92.5%;
+  padding: 30px;
 }
 .work {
+  border: 1px solid var(--secondary-blue-accent);
+  height: 98%;
+  background: white;
+  padding: 10px;
 }
 .detail {
   display: flex;
   justify-content: space-between;
 }
 .sec1 {
-  width: 60%;
+  width: 65%;
 }
 .Name {
   font-size: 28px;
@@ -65,7 +67,7 @@
   display: flex;
   flex-flow: column wrap;
   gap: 3px;
-  width: 38%;
+  width: 33%;
   font-size: 14px;
 }
 .sec2 > div {

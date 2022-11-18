@@ -33,54 +33,57 @@ export class Bio extends Component {
   };
   render() {
     return (
-      <div className='bio'>
-        <div className='name'>
-          <input
-            type='text'
-            placeholder='First Name'
-            onChange={(e) => this.getFirst(e.target.value)}
-          />
-          <input
-            type='text'
-            placeholder='Last Name'
-            onChange={(e) => this.getLast(e.target.value)}
-          />
-          <input
-            type='text'
-            placeholder='Title '
-            onChange={(e) => this.getTitle(e.target.value)}
-          />
+      <div className='spread'>
+        <div className='bio'>
+          <div className='name'>
+            <input
+              type='text'
+              placeholder='First Name'
+              onChange={(e) => this.getFirst(e.target.value)}
+            />
+            <input
+              type='text'
+              placeholder='Last Name'
+              onChange={(e) => this.getLast(e.target.value)}
+            />
+            <input
+              type='text'
+              placeholder='Title '
+              onChange={(e) => this.getTitle(e.target.value)}
+            />
+          </div>
+          <div className='contacts '>
+            <input
+              type='email'
+              placeholder='Email'
+              onChange={(e) => this.getEmail(e.target.value)}
+            />
+            <input
+              type='phone'
+              placeholder='Phone'
+              onChange={(e) => this.getPhone(e.target.value)}
+            />
+          </div>
+          <div className='links '>
+            <input
+              type='text'
+              placeholder='LinkedIn'
+              onChange={(e) => this.getLinkedIn(e.target.value)}
+            />
+            <input
+              type='text'
+              placeholder='GitHub'
+              onChange={(e) => this.getGitHub(e.target.value)}
+            />
+          </div>
+          <textarea
+            className='about'
+            placeholder='About yourself'
+            maxLength='150'
+            onChange={(e) => this.getAbout(e.target.value)}
+          ></textarea>
         </div>
-        <div className='contacts '>
-          <input
-            type='email'
-            placeholder='Email'
-            onChange={(e) => this.getEmail(e.target.value)}
-          />
-          <input
-            type='phone'
-            placeholder='Phone'
-            onChange={(e) => this.getPhone(e.target.value)}
-          />
-        </div>
-        <div className='links '>
-          <input
-            type='text'
-            placeholder='LinkedIn'
-            onChange={(e) => this.getLinkedIn(e.target.value)}
-          />
-          <input
-            type='text'
-            placeholder='GitHub'
-            onChange={(e) => this.getGitHub(e.target.value)}
-          />
-        </div>
-        <textarea
-          className='about'
-          placeholder='About yourself'
-          maxLength='150'
-          onChange={(e) => this.getAbout(e.target.value)}
-        ></textarea>
+
         <div className='nxtPs'>
           <MdNavigateNext
             className='nxt-btn'

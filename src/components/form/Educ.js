@@ -23,7 +23,7 @@ export class Educ extends Component {
 
   render() {
     return (
-      <>
+      <div className='spread'>
         <div className='edu'>
           <input
             type='text'
@@ -56,7 +56,7 @@ export class Educ extends Component {
           />
           {/* <MdHighlightOff  onClick={this.props.next} /> */}
         </div>
-      </>
+      </div>
     );
   }
 }

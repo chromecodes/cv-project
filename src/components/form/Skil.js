@@ -49,12 +49,13 @@ export default class Skil extends Component {
 
   render() {
     return (
-      <>
+      <div className='spread'>
         <div className='skils'>
           {this.state.count.map((cont) => {
             return (
-              <div key={cont} className='flex '>
+              <div key={cont} className='flex'>
                 <input
+                  className='skill-input'
                   type='text'
                   placeholder='Skill'
                   data-index={cont}
@@ -88,7 +89,7 @@ export default class Skil extends Component {
           />
           {/* <MdHighlightOff  onClick={this.props.next} /> */}
         </div>
-      </>
+      </div>
     );
   }
 }
