@@ -97,16 +97,25 @@ class App extends Component {
     });
   };
 
-  // callPreview = () => {
-  //   if (this.state.masterData.bio.first) {
-  //     return this.state.masterData;
-  //   } else {
-  //     return "hello";
-  //   }
-  // };
-
   getPrint = () => {
     this.printRef.current.click();
+  };
+
+  resetAll = () => {
+    this.setState({
+      masterData: {
+        bio: 1,
+        exp: [],
+        edu: [],
+        skill: [],
+      },
+    });
+  };
+
+  demoMode = (data) => {
+    this.setState({
+      masterData: data,
+    });
   };
 
   render() {
@@ -121,6 +130,8 @@ class App extends Component {
           removeEdu={this.removeLastEdu}
           removeSkill={this.removeLastSkill}
           print={this.getPrint}
+          resetAll={this.resetAll}
+          demo={this.demoMode}
         />
         <ReactToPrint
           trigger={() => {

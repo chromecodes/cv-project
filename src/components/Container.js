@@ -18,7 +18,12 @@ export default class Container extends Component {
           removeEdu={this.props.removeEdu}
           removeSkill={this.props.removeSkill}
         />
-        <Controls data={this.props.data} print={this.props.print} />
+        <Controls
+          data={this.props.data}
+          print={this.props.print}
+          resetAll={this.props.resetAll}
+          demo={this.props.demo}
+        />
         <Footer />
       </div>
     );

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { MdNavigateNext } from "react-icons/md";
 
 export class Bio extends Component {
+  constructor(props) {
+    super(props);
+    this.clearRef = React.createRef();
+  }
   data = {};
 
   getInputs = () => {
@@ -30,6 +34,17 @@ export class Bio extends Component {
   };
   getAbout = (value) => {
     this.data.about = value;
+  };
+
+  clear = () => {
+    const bio = document.querySelector(".bio");
+    const clearInputs = bio.querySelectorAll("input");
+    const clearTextarea = bio.querySelector("textarea");
+
+    clearInputs.forEach((input) => {
+      input.value = "";
+    });
+    clearTextarea.value = "";
   };
   render() {
     return (
@@ -92,6 +107,10 @@ export class Bio extends Component {
               this.props.next();
             }}
           />
+          <button onClick={this.clear} className='clear'>
+            {" "}
+            Clear{" "}
+          </button>
         </div>
       </div>
     );

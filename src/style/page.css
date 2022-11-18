@@ -33,6 +33,7 @@
   font-size: 22px;
   color: var(--terinary-blue-accent);
   color: #1373ab;
+  padding-top: 10px;
 }
 .page {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
