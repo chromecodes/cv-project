@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../style/page.css";
+import Intro from "./form/Intro";
 
 export default class Preview extends Component {
   bioSec = () => {
@@ -135,9 +136,9 @@ export default class Preview extends Component {
   };
 
   printData = () => {
-    if (this.props.data.bio === 1) {
+    if (this.props.data.intro === 1) {
       console.log(this.props.data);
-      return "hello";
+      return <Intro />;
     } else {
       return this.bioSec();
     }

@@ -137,3 +137,23 @@
 .sub-name {
   font-size: 20px;
 }
+/****** INTRO *****/
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clear-demo {
+  font-weight: 600;
+  border: 1px solid var(--secondary-red-accent);
+  background-color: var(--primary-red-accent);
+  color: var(--secondary-red-accent);
+  border-radius: 5px;
+  cursor: text;
+}
+.nxt-btn-demo {
+  color: var(--secondary-color);
+  background-color: var(--secondary-bg-color);
+  border-radius: 50%;
+  border: 1px solid var(--secondary-blue-accent);
+}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { FaRegTimesCircle } from "react-icons/fa";
-import { MdNavigateNext, MdHighlightOff } from "react-icons/md";
+import { MdNavigateNext } from "react-icons/md";
 
 export default class Skil extends Component {
   constructor(props) {
@@ -46,7 +45,23 @@ export default class Skil extends Component {
   getInputs = () => {
     this.props.getData(this.data);
   };
+  clear = () => {
+    const skils = document.querySelector(".skils");
+    const clearInputs = skils.querySelectorAll("input");
 
+    clearInputs.forEach((input) => {
+      input.value = "";
+    });
+  };
+  clear = () => {
+    const tab = document.querySelector(".active.tab");
+    const org = tab.querySelector(".active.set");
+    const skils = org.querySelector(".skils");
+    const clearInputs = skils.querySelectorAll("input");
+    clearInputs.forEach((input) => {
+      input.value = "";
+    });
+  };
   render() {
     return (
       <div className='spread'>
@@ -72,7 +87,6 @@ export default class Skil extends Component {
                   }}
                 >
                   x
-                  {/* x <FaRegTimesCircle className='dlt-btn' data-index={cont} /> */}
                 </button>
               </div>
             );
@@ -87,7 +101,9 @@ export default class Skil extends Component {
               this.props.next();
             }}
           />
-          {/* <MdHighlightOff  onClick={this.props.next} /> */}
+          <button onClick={this.clear} className='clear'>
+            Clear
+          </button>
         </div>
       </div>
     );

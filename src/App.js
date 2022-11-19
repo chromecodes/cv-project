@@ -10,7 +10,8 @@ class App extends Component {
     this.printRef = React.createRef();
     this.state = {
       masterData: {
-        bio: 1,
+        intro: 1,
+        bio: [],
         exp: [],
         edu: [],
         skill: [],
@@ -18,47 +19,57 @@ class App extends Component {
     };
   }
 
-  removeLastExp = () => {
-    let temp = this.state.masterData.exp;
-    temp.pop();
-    this.setState({
-      masterData: {
-        bio: this.state.masterData.bio,
-        exp: temp,
-        edu: this.state.masterData.edu,
-        skill: this.state.masterData.skill,
-      },
-    });
+  removeLastExp = (leng) => {
+    if (leng === this.state.masterData.exp.length) {
+      let temp = this.state.masterData.exp;
+      temp.pop();
+      this.setState({
+        masterData: {
+          intro: this.state.masterData.intro,
+          bio: this.state.masterData.bio,
+          exp: temp,
+          edu: this.state.masterData.edu,
+          skill: this.state.masterData.skill,
+        },
+      });
+      console.log(this.state.masterData);
+    }
   };
 
-  removeLastEdu = () => {
-    let temp = this.state.masterData.edu;
-    temp.pop();
-    this.setState({
-      masterData: {
-        bio: this.state.masterData.bio,
-        exp: this.state.masterData.exp,
-        edu: temp,
-        skill: this.state.masterData.skill,
-      },
-    });
+  removeLastEdu = (leng) => {
+    if (leng === this.state.masterData.edu.length) {
+      let temp = this.state.masterData.edu;
+      temp.pop();
+      this.setState({
+        masterData: {
+          bio: this.state.masterData.bio,
+          exp: this.state.masterData.exp,
+          edu: temp,
+          skill: this.state.masterData.skill,
+        },
+      });
+    }
   };
 
-  removeLastSkill = () => {
-    let temp = this.state.masterData.skill;
-    temp.pop();
-    this.setState({
-      masterData: {
-        bio: this.state.masterData.bio,
-        exp: this.state.masterData.exp,
-        edu: this.state.masterData.edu,
-        skill: temp,
-      },
-    });
+  removeLastSkill = (leng) => {
+    if (leng === this.state.masterData.skill.length) {
+      let temp = this.state.masterData.skill;
+      temp.pop();
+      this.setState({
+        masterData: {
+          bio: this.state.masterData.bio,
+          exp: this.state.masterData.exp,
+          edu: this.state.masterData.edu,
+          skill: temp,
+        },
+      });
+    }
   };
+
   getBioData = (data) => {
     this.setState({
       masterData: {
+        intro: 0,
         bio: data,
         exp: this.state.masterData.exp,
         edu: this.state.masterData.edu,
@@ -69,6 +80,7 @@ class App extends Component {
   getExpData = (data) => {
     this.setState({
       masterData: {
+        intro: 0,
         bio: this.state.masterData.bio,
         exp: data,
         edu: this.state.masterData.edu,
@@ -79,6 +91,7 @@ class App extends Component {
   getEduData = (data) => {
     this.setState({
       masterData: {
+        intro: 0,
         bio: this.state.masterData.bio,
         exp: this.state.masterData.exp,
         edu: data,
@@ -89,6 +102,7 @@ class App extends Component {
   getSkilData = (data) => {
     this.setState({
       masterData: {
+        intro: 0,
         bio: this.state.masterData.bio,
         exp: this.state.masterData.exp,
         edu: this.state.masterData.edu,
@@ -104,7 +118,8 @@ class App extends Component {
   resetAll = () => {
     this.setState({
       masterData: {
-        bio: 1,
+        intro: 1,
+        bio: [],
         exp: [],
         edu: [],
         skill: [],

@@ -23,6 +23,18 @@ export default class Exp extends Component {
   getAbout = (value) => {
     this.data.about = value;
   };
+  clear = () => {
+    const tab = document.querySelector(".active.tab");
+    const org = tab.querySelector(".active.set");
+    const exp = org.querySelector(".exp");
+    const clearInputs = exp.querySelectorAll("input");
+    const clearTextarea = exp.querySelector("textarea");
+
+    clearInputs.forEach((input) => {
+      input.value = "";
+    });
+    clearTextarea.value = "";
+  };
   render() {
     return (
       <div className='spread'>
@@ -65,6 +77,9 @@ export default class Exp extends Component {
               this.props.next();
             }}
           />
+          <button onClick={this.clear} className='clear'>
+            Clear
+          </button>
         </div>
       </div>
     );

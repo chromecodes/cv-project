@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MdNavigateNext, MdHighlightOff } from "react-icons/md";
+import { MdNavigateNext } from "react-icons/md";
 
 export class Educ extends Component {
   data = {
@@ -20,7 +20,15 @@ export class Educ extends Component {
   getEnd = (value) => {
     this.data.end = value;
   };
-
+  clear = () => {
+    const tab = document.querySelector(".active.tab");
+    const org = tab.querySelector(".active.set");
+    const edu = org.querySelector(".edu");
+    const clearInputs = edu.querySelectorAll("input");
+    clearInputs.forEach((input) => {
+      input.value = "";
+    });
+  };
   render() {
     return (
       <div className='spread'>
@@ -54,7 +62,9 @@ export class Educ extends Component {
               this.props.next();
             }}
           />
-          {/* <MdHighlightOff  onClick={this.props.next} /> */}
+          <button onClick={this.clear} className='clear'>
+            Clear
+          </button>
         </div>
       </div>
     );

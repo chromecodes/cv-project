@@ -55,11 +55,11 @@ export default class Setlist extends Component {
   };
   removeData = () => {
     if (this.props.val === "exp") {
-      this.props.removeExp();
+      this.props.removeExp(this.state.sets.length);
     } else if (this.props.val === "edu") {
-      this.props.removeEdu();
+      this.props.removeEdu(this.state.sets.length);
     } else if (this.props.val === "skl") {
-      this.props.removeSkill();
+      this.props.removeSkill(this.state.sets.length);
     }
   };
 

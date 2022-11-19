@@ -108,8 +108,7 @@ export class Bio extends Component {
             }}
           />
           <button onClick={this.clear} className='clear'>
-            {" "}
-            Clear{" "}
+            Clear
           </button>
         </div>
       </div>
