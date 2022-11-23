@@ -7,7 +7,8 @@
   --terinary-bg-color: #1789c9;
 
   --primary-red-accent: #ffd9dd;
-  --secondary-red-accent: #c12e3e;
+  --secondary-red-accent: #dc2626;
+  /* --secondary-red-accent: #c12e3e; */
 
   --primary-blue-accent: #a4d7f4;
   --secondary-blue-accent: #1789c9;
@@ -16,7 +17,7 @@
   --secondary-lggreen-accent: #00ff7f;
 
   --primary-drgreen-accent: #e1f7d9;
-  --secondary-drgreen-accent: #add626;
+  --secondary-drgreen-accent: #84cc16;
 
   --primary-saffron-accent: #ffccb3;
   --secondary-saffron-accent: #ff9966;

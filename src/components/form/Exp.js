@@ -34,6 +34,10 @@ export default class Exp extends Component {
       input.value = "";
     });
     clearTextarea.value = "";
+    this.data = {
+      set: this.props.set,
+      role: " ",
+    };
   };
   render() {
     return (

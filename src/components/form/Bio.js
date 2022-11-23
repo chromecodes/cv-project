@@ -4,7 +4,6 @@ import { MdNavigateNext } from "react-icons/md";
 export class Bio extends Component {
   constructor(props) {
     super(props);
-    this.clearRef = React.createRef();
   }
   data = {};
 
@@ -45,6 +44,8 @@ export class Bio extends Component {
       input.value = "";
     });
     clearTextarea.value = "";
+
+    this.data = {};
   };
   render() {
     return (

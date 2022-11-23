@@ -61,6 +61,10 @@ export default class Skil extends Component {
     clearInputs.forEach((input) => {
       input.value = "";
     });
+    this.data = {
+      set: this.props.set,
+      skills: [" "],
+    };
   };
   render() {
     return (

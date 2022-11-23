@@ -14,13 +14,15 @@
   --secondary-lggreen-accent: #00ff7f;
 
   --primary-drgreen-accent: #4eff10;
-  --secondary-drgreen-accent: #94c200;
+  --secondary-drgreen-accent: #84cc16;
   --primary-saffron-accent: #ffccb3;
   --secondary-saffron-accent: #ff9966;
 
   --primary-color: #000000;
   --secondary-color: #1789c9;
   --terinary-color: #ffffff;
+
+  /* --secondary-drgreen-accent: #add626; */
 }
 .line {
   width: 100%;
@@ -143,6 +145,13 @@
   flex-direction: column;
   align-items: center;
 }
+.intro > ul {
+  width: 450px;
+  font-size: 18px;
+}
+.intro > ul > li {
+  padding: 5px;
+}
 .clear-demo {
   font-weight: 600;
   border: 1px solid var(--secondary-red-accent);
@@ -151,9 +160,50 @@
   border-radius: 5px;
   cursor: text;
 }
+
 .nxt-btn-demo {
+  font-weight: 600;
+  font-size: 20px;
   color: var(--secondary-color);
   background-color: var(--secondary-bg-color);
   border-radius: 50%;
   border: 1px solid var(--secondary-blue-accent);
+}
+
+.pdf-btn-demo {
+  font-weight: 600;
+  background-color: var(--secondary-blue-accent);
+  color: var(--terinary-color);
+  border-radius: 5px;
+  border: 1px solid var(--secondary-blue-accent);
+}
+
+.reset-btn-demo {
+  font-weight: 600;
+  background-color: var(--secondary-red-accent);
+  color: var(--primary-red-accent);
+  border-radius: 5px;
+  border: 1px solid var(--secondary-red-accent);
+}
+
+.demo-btn-demo {
+  font-weight: 600;
+  background-color: var(--secondary-drgreen-accent);
+  color: var(--primary-drgreen-accent);
+  border: 1px solid var(--secondary-drgreen-accent);
+  border-radius: 5px;
+}
+
+.dlt-btn-demo {
+  font-size: 22px;
+
+  color: var(--secondary-red-accent);
+  border: none;
+}
+.add-btn-demo {
+  font-size: 22px;
+  color: var(--secondary-color);
+  background-color: var(--secondary-bg-color);
+  border-radius: 50%;
+  cursor: pointer;
 }
