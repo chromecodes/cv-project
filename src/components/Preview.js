@@ -20,7 +20,7 @@ export default class Preview extends Component {
             </div>
             <div>
               <span className='icon2'></span>
-              <span>{this.props.data.bio.email}</span>
+              <div>{this.props.data.bio.email}</div>
             </div>
             <div>
               <span className='icon3'></span>

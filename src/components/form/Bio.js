@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { MdNavigateNext } from "react-icons/md";
 
 export class Bio extends Component {
-  constructor(props) {
-    super(props);
-  }
   data = {};
 
   getInputs = () => {

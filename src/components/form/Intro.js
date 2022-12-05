@@ -36,7 +36,7 @@ export default class Intro extends Component {
             The <AiOutlinePlusCircle className='add-btn-demo' /> button add's a
             new set in the section. (limit is 4)
           </li>
-          <li>On skill section it add a skill slot. (limit is 5)</li>
+          <li>On skill section it add a skill slot. (limit is 4)</li>
           <li>
             The <RiDeleteBack2Fill className='dlt-btn-demo' /> button removes
             the last set from the section and update preview.

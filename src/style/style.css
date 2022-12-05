@@ -56,22 +56,6 @@ button {
   flex-direction: column;
 }
 
-/*** PREVIEW SECTION ***/
-
-@media print {
-  .preview {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-  }
-  .page {
-    height: 94%;
-  }
-  .Name {
-    font-size: 48px;
-  }
-}
 /***   HEADER SECTION   ***/
 
 .header {
@@ -454,5 +438,76 @@ textarea:focus {
 @media (max-width: 340px) {
   .tabs {
     padding: 2px 4px;
+  }
+}
+
+/*** PRINT SECTION ***/
+
+@media print {
+  .preview {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .page {
+    height: 94%;
+  }
+  .Name {
+    font-size: 44px;
+  }
+  .Title {
+    font-size: 38px;
+  }
+  .About {
+    font-size: 46px;
+  }
+  .sec1 {
+    width: 55%;
+  }
+  .sec2 {
+    width: 45%;
+    font-size: 20px;
+  }
+  .sec2 > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .icon1,
+  .icon2,
+  .icon3,
+  .icon4 {
+    font-size: 18px;
+  }
+  .icon2 + span {
+    width: 33%;
+  }
+  .icon1::before,
+  .icon2::before,
+  .icon3::before,
+  .icon4::before {
+    font-size: 20px;
+    color: var(--terinary-blue-accent);
+  }
+
+  /**** EXP  ****/
+  .line {
+    height: 4px;
+  }
+  .Heading {
+    font-size: 32px;
+  }
+  .sub-sec {
+    font-size: 24px;
+  }
+  .sub-about {
+    font-size: 22px;
+  }
+  .date {
+    color: grey;
+  }
+  .sub-name {
+    font-size: 24px;
   }
 }

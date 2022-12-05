@@ -54,7 +54,7 @@
   justify-content: space-between;
 }
 .sec1 {
-  width: 65%;
+  width: 60%;
 }
 .Name {
   font-size: 28px;
@@ -62,15 +62,12 @@
 .Title {
   font-size: 24px;
 }
-.About {
-  display: block;
-  font-size: 16px;
-}
+
 .sec2 {
   display: flex;
   flex-flow: column wrap;
   gap: 3px;
-  width: 33%;
+  width: 38%;
   font-size: 14px;
 }
 .sec2 > div {
@@ -146,9 +143,10 @@
   align-items: center;
 }
 .intro > ul {
-  width: 450px;
+  max-width: 450px;
   font-size: 18px;
 }
+
 .intro > ul > li {
   padding: 5px;
 }

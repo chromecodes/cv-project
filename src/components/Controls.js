@@ -32,6 +32,24 @@ export default class Controls extends Component {
         about:
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quod placeat commodi ea sequi doloribus laboriosam! Nemo praesentium deleniti ut illo",
       },
+      {
+        set: 3,
+        role: "Socessor",
+        company: "Ishigami village",
+        start: "2020",
+        end: "2021",
+        about:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quod placeat commodi ea sequi doloribus laboriosam! Nemo praesentium deleniti ut illo",
+      },
+      {
+        set: 4,
+        role: "scientist ",
+        company: "Kingdom of science",
+        start: "2022",
+        end: "present",
+        about:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quod placeat commodi ea sequi doloribus laboriosam! Nemo praesentium deleniti ut illo",
+      },
     ],
     edu: [
       {
@@ -50,6 +68,13 @@ export default class Controls extends Component {
       },
       {
         set: 3,
+        degree: "simply nothing",
+        school: "Ishigami village",
+        start: "2008",
+        end: "2010",
+      },
+      {
+        set: 4,
         degree: "simply nothing",
         school: "Ishigami village",
         start: "2008",
