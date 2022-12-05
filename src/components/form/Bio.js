@@ -92,7 +92,7 @@ export class Bio extends Component {
           <textarea
             className='about'
             placeholder='About yourself'
-            maxLength='150'
+            maxLength='200'
             onChange={(e) => this.getAbout(e.target.value)}
           ></textarea>
         </div>

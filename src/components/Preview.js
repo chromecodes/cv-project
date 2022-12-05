@@ -52,7 +52,6 @@ export default class Preview extends Component {
   skilSec = () => {
     let sec = "";
     if (this.props.data.skill[0]) {
-      console.log(this.props.data.skill);
       for (let i = 0; i < this.props.data.skill.length; i++) {
         let temp = this.props.data.skill[i].skills.join(", ");
         if (i !== 0) {
@@ -140,6 +139,7 @@ export default class Preview extends Component {
       console.log(this.props.data);
       return <Intro />;
     } else {
+      console.log(this.props.data);
       return this.bioSec();
     }
   };

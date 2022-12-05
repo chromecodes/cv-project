@@ -454,7 +454,7 @@ textarea:focus {
     height: 94%;
   }
   .Name {
-    font-size: 44px;
+    font-size: 42px;
   }
   .Title {
     font-size: 38px;
@@ -494,6 +494,7 @@ textarea:focus {
   /**** EXP  ****/
   .line {
     height: 4px;
+    margin: 4px;
   }
   .Heading {
     font-size: 32px;
