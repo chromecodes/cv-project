@@ -136,10 +136,8 @@ export default class Preview extends Component {
 
   printData = () => {
     if (this.props.data.intro === 1) {
-      console.log(this.props.data);
       return <Intro />;
     } else {
-      console.log(this.props.data);
       return this.bioSec();
     }
   };

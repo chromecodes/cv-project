@@ -63,7 +63,6 @@ export default class Set extends Component {
     if (datum.role) {
       this.props.getExpData(this.data.exp);
     } else if (datum.degree) {
-      console.log(this.data);
       this.props.getEduData(this.data.edu);
     } else if (datum.skills) {
       this.props.getSkilData(this.data.skill);

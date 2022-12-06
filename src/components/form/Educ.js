@@ -6,7 +6,6 @@ export class Educ extends Component {
     set: this.props.set,
   };
   getInputs = () => {
-    console.log(this.data);
     this.props.getData(this.data);
   };
   getDegree = (value) => {

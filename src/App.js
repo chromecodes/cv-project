@@ -32,7 +32,6 @@ class App extends Component {
           skill: this.state.masterData.skill,
         },
       });
-      console.log(this.state.masterData);
     }
   };
 

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { RiDeleteBack2Fill } from "react-icons/ri";
 
-// import Setbtn from "./Setbtn";
-
 export default class Setlist extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +22,7 @@ export default class Setlist extends Component {
       });
       this.props.update(this.state.sets, this.state.crtset);
     } else {
-      console.log(this.state.sets);
+      console.log("Max Set is " + this.state.sets);
     }
   };
 
@@ -46,7 +44,6 @@ export default class Setlist extends Component {
       } else if (this.state.sets.length === 2) {
         tempSets = tempSet.splice(0, 1);
       }
-      console.log(tempSets);
       this.setState({
         sets: tempSets,
         crtset: tempSets.length,
@@ -54,12 +51,14 @@ export default class Setlist extends Component {
     }
   };
   removeData = () => {
-    if (this.props.val === "exp") {
-      this.props.removeExp(this.state.sets.length);
-    } else if (this.props.val === "edu") {
-      this.props.removeEdu(this.state.sets.length);
-    } else if (this.props.val === "skl") {
-      this.props.removeSkill(this.state.sets.length);
+    if (this.state.sets.length !== 1) {
+      if (this.props.val === "exp") {
+        this.props.removeExp(this.state.sets.length);
+      } else if (this.props.val === "edu") {
+        this.props.removeEdu(this.state.sets.length);
+      } else if (this.props.val === "skl") {
+        this.props.removeSkill(this.state.sets.length);
+      }
     }
   };
 

@@ -285,7 +285,7 @@ textarea:focus {
   background-color: var(--secondary-bg-color);
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 19px 100px 19px 0;
   border-radius: 0 0 50px 0;
   border-bottom: 1px solid var(--secondary-color);
@@ -500,15 +500,15 @@ textarea:focus {
     font-size: 32px;
   }
   .sub-sec {
-    font-size: 24px;
+    font-size: 23px;
   }
   .sub-about {
-    font-size: 22px;
+    font-size: 21px;
   }
   .date {
     color: grey;
   }
   .sub-name {
-    font-size: 24px;
+    font-size: 23px;
   }
 }
